@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Floor Plan Map with OpenLayers</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ol3/4.6.5/ol.css" type="text/css">
+  <style>
+    #map {
+      width: 100%;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ol3/4.6.5/ol.js"></script>
+  <script>
+    // Define the extent of the floor plan image in map coordinates
+    const imageExtent = [0, 0, 1024, 768]; // Adjust these values to fit your image size
+
+    // Create an ImageStatic layer with the JPEG floor plan
+    const floorPlanLayer = new ol.layer.Image({
+      source: new ol.source.ImageStatic({
+        url: 'path/to/your-floor-plan.jpg', // Replace with the path to your JPEG file
+        projection: 'EPSG:3857',
+        imageExtent: imageExtent,
+      }),
+    });
+
+    // Initialize the map with the image layer
+    const map = new ol.Map({
+      target: 'map',
+      layers: [floorPlanLayer],
+      view: new ol.View({
+        projection: 'EPSG:3857',
+        center: ol.extent.getCenter(imageExtent), // Center the view on the image
+        zoom: 2, // Adjust the zoom level to fit your needs
+        maxZoom: 5,
+      }),
+    });
+
+    // Optional: Add a click event to get the coordinates of points on the map
+    map.on('click', function(evt) {
+      const coordinates = evt.coordinate;
+      console.log('Clicked at:', coordinates);
+    });
+  </script>
+</body>
+</html>
