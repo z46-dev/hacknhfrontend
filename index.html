@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <title>Class.ly</title>
     <meta charset="utf-8">
     <title>Classly</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.js"></script>
     <script type="module" src="./js/app.js"></script>
+    <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="manifest" href="/hacknhfrontend/manifest.json">
 
@@ -19,7 +21,19 @@
 
   </head>
   <body>
-    <div id="mapbox"></div>
-    <script src="./js/mapbox.js"></script>
+    <main>
+      <h1>
+        Welcome to Class.ly!
+      </h1>
+      <form id="account" onsubmit="formSubmit('login'); return false">
+        <h3 id="account-header">Login:</h3>
+        <input id="username" type="text" placeholder="Username">
+        <input id="password" type="password" placeholder="Password">
+        <input id="confirm" class="hidden" type="password" placeholder="Confirm Password">
+        <p id="account-switch" onclick="switchForm('login')">Don't have an account? Register now</p>
+        <button id="account-submit" type="submit" value="Submit">Submit</button>
+      </form>
+    </main>
+    <script src="./js/account.js"></script>
   </body>
 </html>
