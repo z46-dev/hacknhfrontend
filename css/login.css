@@ -1,0 +1,92 @@
+:root {
+  --bg-color-main: #f1f1f1;
+  --bg-color-alt: #fefefe;
+  --black-1: #111111;
+
+  --blue: #458588;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-color-main);
+
+  animation: fadeOnLoad 1s;
+}
+
+@keyframes fadeOnLoad {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 32rem;
+  height: 24rem;
+  background-color: var(--bg-color-alt);
+  border-radius: 40px;
+}
+
+input {
+  width: 20rem;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 100px;
+}
+
+h1 {
+  position: relative;
+  overflow: hidden;
+  animation: textPopIn 1s;
+}
+
+@keyframes textPopIn {
+  0% {
+    top: -2rem;
+  }
+
+  100% {
+    top: 0rem;
+  }
+}
+
+#account-switch {
+  color: blue;
+  text-decoration: underline;
+  justify-self: flex-start;
+}
+
+#account-switch:hover {
+  cursor: pointer;
+}
+
+#account-submit {
+  background-color: var(--blue);
+  box-shadow: var(--blue) 0 10px 20px -10px;
+
+  border-radius: 100px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 8px 18px;
+  width: fit-content;
+  border: 0;
+  outline: none;
+
+  text-align: center;
+  text-justify: center;
+}
