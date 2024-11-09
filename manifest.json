@@ -1,0 +1,16 @@
+{
+    "name": "Classly",
+    "short_name": "Classly",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#FFE9D2",
+    "theme_color": "#FFE1C4",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/hacknhfrontend/icons/logo-256x256.png",
+            "type": "image/png",
+            "sizes": "256x256"
+        }
+    ]
+}
